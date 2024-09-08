@@ -1,0 +1,102 @@
+
+main {
+    display: flex;
+    gap: 1rem;
+    .sidebar {
+        width: 25%;
+        height: 100vh;
+        box-shadow: .25rem .25rem .5rem rgb(0 0 0 / 20%);
+        padding: 1.5rem;
+        background-color: #f0f0f0;
+        position: sticky;
+        top: 0;
+        left: 0;
+        overflow-y: auto;
+        
+        .side-header {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            position: relative;
+    
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -1rem;
+                background-color: #dadada;
+                width: 20rem;
+                height: 2px;
+                align-self: flex-start;
+            }
+    
+            > input {
+                padding: .75rem 1.5rem;
+                border-radius: .5rem;
+                border: 1px solid #d9d9d9;
+                color: #222;
+                outline: none;
+                // border: ;
+            }
+    
+            .btn {
+                background-color: #fff;
+                padding: .6rem 1rem;
+                border: none;
+                border-radius: .5rem;
+                color: rgb(11, 171, 235);
+                // font-weight: bold;
+                font-size: 1.125rem;
+                box-shadow: .15rem .15rem .15rem rgb(0 0 0 / 10%);
+                cursor: pointer;
+                transition: all .4s ease-out;
+    
+                &:hover {
+                    background-color: rgb(11, 171, 235);
+                    color: #fff;
+                }
+            }
+        }
+    
+        ul {
+            margin-top: 3rem;
+    
+            li {
+                transition: all .4s ease-in-out;
+                margin-top: 3rem;
+                width: 80%;
+    
+                a {
+                    display: flex;
+                    align-items: center;
+                    gap: .5rem;
+    
+                    span {
+                        color: rgb(11, 171, 235);
+                        font-size: 1.5rem;
+                        transition: all .4s ease-in-out;
+                    }
+                }
+                
+                &:hover {
+                    background-color: rgb(11, 171, 235);
+                    padding: .5rem 1rem;
+                    border-radius: .5rem;
+    
+                    a {
+                        span {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+    .pages {
+        width: 75%;
+        padding: 2rem;
+        overflow-y: auto; 
+        background-color: #fff;
+    }
+}
