@@ -83,7 +83,19 @@
                 }
             }
         }
+
+        .hint {
+            margin-top: 2rem;
+            font-size: .75rem;
+            color: #777;
+
+            h6 {
+                color: #f00;
+                font-size: .875rem;
+            }
+        }
     }
+
     .login-account {
         @include flex-center;
         gap: .25rem;

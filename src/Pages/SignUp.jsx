@@ -55,6 +55,11 @@ const SignUp = () => {
         <div className="submit">
           <input type="submit" value="Sign Up" />
         </div>
+        <div className="hint">
+          <h6>Use this info</h6>
+          <p>Username: alimahmoud.cs@outlook.com</p>
+          <p>Password: AliMahmoud123</p>
+        </div>
       </form>
     </section>
   );
