@@ -75,7 +75,7 @@ const Sidebar = () => {
       </div>
 
       <div className="pages">
-        <Outlet /> {/* Outlet will render the matched child route content */}
+        <Outlet />
       </div>
     </main>
   );
