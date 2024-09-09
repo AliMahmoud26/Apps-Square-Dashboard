@@ -1,14 +1,23 @@
 import React from 'react';
 import { FaCat, FaEarlybirds, FaImage, FaLeaf, FaMountain, FaTree } from 'react-icons/fa';
 import { FaEarthOceania } from 'react-icons/fa6';
-import { Link, Outlet } from 'react-router-dom'; // Import Outlet
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { useAuth } from '../protectedRoute/AuthProvider'; // Import the AuthContext for authentication state
 
 const Sidebar = () => {
+  const { isAuthenticated, logout } = useAuth(); // Use authentication state and logout function
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    logout(); // Call logout function to clear localStorage and set user as unauthenticated
+    navigate('/sign-up'); // Redirect user to the sign-up page after logging out
+  };
+
   return (
     <main>
       <div className='sidebar'>
         <div className='side-header'>
-          <input type="search" name="search" id="search" placeholder='Search...'/>
+          <input type="search" name="search" id="search" placeholder='Search...' />
           <button className='btn'>Search</button>
         </div>
         <ul>
@@ -55,10 +64,18 @@ const Sidebar = () => {
             </Link>
           </li>
         </ul>
+
+        <div className="auth-button">
+          {isAuthenticated ? (
+            <button className="sign-btn" onClick={handleLogout}>LOG OUT</button>
+          ) : (
+            <Link to='/sign-up'><button className="sign-btn">SIGN UP</button></Link>
+          )}
+        </div>
       </div>
 
       <div className="pages">
-        <Outlet />
+        <Outlet /> {/* Outlet will render the matched child route content */}
       </div>
     </main>
   );

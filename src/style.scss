@@ -1,11 +1,14 @@
 // Importing partials files
 @use './sass/partials/global';
+@use './sass/partials/variables' as *;
+@use './sass/partials/mixins' as *;
 
 // Importing the components file
 @use './sass/components/sidebar';
 
 // Importing the components file
 @use './sass/pages/allPhotos';
+@use './sass/pages/signup';
 
 // Importing Google Fonts
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
